@@ -16,6 +16,8 @@ Set environment variables
 `DISCORD_TOKEN` - Your Discord bot token  
 `AIRLABS_API_KEY` - Your AirLabs API key
 
+Either run the bot directly with Python or with `docker compose up -d`.
+
 ## Commands
 
 - /track - Track a flight by its IATA flight number.
