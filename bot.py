@@ -15,7 +15,13 @@ AIRLABS_API_KEY = os.getenv("AIRLABS_API_KEY")
 class FlightBot(commands.Bot):
     def __init__(self):
         intents = discord.Intents.default()
-        super().__init__(command_prefix="!", intents=intents)
+        super().__init__(
+            command_prefix="!",
+            intents=intents,
+            allowed_contexts=app_commands.AppCommandContext(
+                guild=True, dm_channel=True, private_channel=True
+            )
+        )
         
     async def setup_hook(self):
         await self.tree.sync()
@@ -26,9 +32,6 @@ class FlightBot(commands.Bot):
 
 
 bot = FlightBot()
-intents = discord.Intents.default()
-bot = commands.Bot(command_prefix="!", intents=intents, allowed_contexts=discord.app_commands.AppCommandContext(guild=True, dm_channel=True, private_channel=True))
-
 
 @bot.tree.command(name="track", description="Track a flight by its IATA flight number")
 @app_commands.describe(flight_iata="The flight IATA code (e.g., AA100, UA456)")
