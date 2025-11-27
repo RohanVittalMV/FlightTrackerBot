@@ -1,4 +1,4 @@
-# Discord Flight Tracking Bot ✈️
+# Discord Flight Tracking Bot
 
 A Discord bot that provides real-time flight tracking information using slash commands. Built for Discord's Apps Directory.
 
