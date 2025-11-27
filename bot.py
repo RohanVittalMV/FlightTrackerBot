@@ -26,6 +26,8 @@ class FlightBot(commands.Bot):
 
 
 bot = FlightBot()
+intents = discord.Intents.default()
+bot = commands.Bot(command_prefix="!", intents=intents, allowed_contexts=discord.app_commands.AppCommandContext(guild=True, dm_channel=True, private_channel=True))
 
 
 @bot.tree.command(name="track", description="Track a flight by its IATA flight number")
